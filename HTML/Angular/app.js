@@ -3,7 +3,7 @@ angular.module('physicianPortal', ['ui.router'])
   $stateProvider
   .state('welcome', {
     url: '/',
-    templateUrl: 'js/welcome/welcome.html',
+    templateUrl: 'Angular/welcome/welcome.html',
   })
   .state('outstandingreports', {
     url: '/outstandingreports',

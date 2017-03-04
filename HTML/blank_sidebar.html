@@ -12,7 +12,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
-<script src="/Angular/app.js"
+<script src="./Angular/app.js"></script>
 
 <script type="text/javascript" src="js/plugins/charts/jquery.sparkline.min.js"></script>
 <script type="text/javascript" src="js/plugins/ui/jquery.collapsible.min.js"></script>
@@ -227,6 +227,12 @@
             <li><a href="#" title="Check statistics" class="tipN"><img src="images/icons/middlenav/stats.png" alt="" /></a></li>
         </ul> -->
 
+				<div class='angular-menu'>
+					<a ui-sref='welcome'><button>Main</button></a>
+					<a ui-sref='outstandingreports'><button>Outstanding Reports</button></a>
+					<a ui-sref='completedreports'><button>Completed Reports</button></a>
+					<a ui-sref='patientlist'><button>Patient List</button></a>
+			</div>
 				<ui-view></ui-view>
 
         <!-- Calendar -->
