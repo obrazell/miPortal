@@ -7,15 +7,15 @@ angular.module('physicianPortal', ['ui.router'])
   })
   .state('outstandingreports', {
     url: '/outstandingreports',
-    templateUrl: 'js/reports/outstandingReports.html',
+    templateUrl: 'Angular/outstandingReports/outstandingReports.html',
   })
   .state('completedreports', {
     url: '/completedreports',
-    templateUrl: 'js/reports/completedReports.html',
+    templateUrl: 'Angular/completedReports/completedReports.html',
   })
   .state('patientlist', {
     url: '/patientlist',
-    templateUrl: 'js/patientList/patientList.html',
+    templateUrl: 'Angular/patientList/patientList.html',
   })
 
 
