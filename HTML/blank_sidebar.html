@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="physicianPortal">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -8,8 +8,11 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE]> <link href="css/ie.css" rel="stylesheet" type="text/css"> <![endif]-->
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+<script src="./Angular/app.js"></script>
 
 <script type="text/javascript" src="js/plugins/charts/jquery.sparkline.min.js"></script>
 <script type="text/javascript" src="js/plugins/ui/jquery.collapsible.min.js"></script>
@@ -26,7 +29,7 @@
 <div id="top">
 	<div class="wrapper">
     	<a href="index.html" title="" class="logo"><img src="images/logo.png" alt="" /></a>
-        
+
         <!-- Right top nav -->
         <div class="topNav">
             <ul class="userNav">
@@ -46,7 +49,7 @@
                 </form>
             </div>
         </div>
-        
+
         <!-- Responsive nav -->
         <ul class="altMenu">
             <li><a href="#" title="">Dashboard</a></li>
@@ -78,7 +81,7 @@
                 <li><a href="#" title="" class="sLogout">Logout</a></li>
             </ul>
         </div>
-        
+
         <!-- Responsive nav -->
         <div class="altNav">
             <div class="userSearch">
@@ -87,7 +90,7 @@
                     <input type="submit" value="" />
                 </form>
             </div>
-            
+
             <!-- User nav -->
             <ul class="userNav">
                 <li><a href="#" title="" class="profile"></a></li>
@@ -96,7 +99,7 @@
                 <li><a href="#" title="" class="logout"></a></li>
             </ul>
         </div>
-        
+
         <!-- Main nav -->
         <ul class="nav">
             <li><a href="#" title=""><img src="images/icons/mainnav/dashboard.png" alt=""/><span>Inactive</span></a></li>
@@ -109,27 +112,27 @@
             </li>
         </ul>
     </div>
-    
+
     <!-- Secondary nav -->
     <div class="secNav">
         <div class="secWrapper">
             <div class="secTop">
                 <div class="balance">
                     <div class="balInfo">Balance:<span>Apr 21 2012</span></div>
-                    <div class="balAmount"><span class="balBars"><!--5,10,15,20,18,16,14,20,15,16,12,10--></span><span>$58,990</span></div>
+                    <div class="balAmount"><span class="balBars"> </span><span>$58,990</span></div>
                 </div>
                 <a href="#" class="triangle-red"></a>
             </div>
-            
+
             <!-- Tabs container -->
             <div id="tab-container" class="tab-container">
                 <ul class="iconsLine ic2 etabs">
                     <li><a href="#general" title=""><span class="icos-fullscreen"></span></a></li>
                     <li><a href="#alt1" title=""><span class="icos-user"></span></a></li>
                 </ul>
-                
+
                 <div class="divider"><span></span></div>
-                
+
                 <div id="general">
                     <ul class="subNav">
                         <li><a href="other_calendar.html" title="" class="this"><span class="icos-dcalendar"></span>Current page</a></li>
@@ -142,7 +145,7 @@
                         <li><a href="#" title=""><span class="icos-dcalendar"></span>Last</a></li>
                     </ul>
                 </div>
-                
+
                 <div id="alt1">
                     <div class="sidePad">
                         <a href="#" title="" class="sideB bBlue">Add new session</a>
@@ -150,15 +153,15 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="divider"><span></span></div>
-        
-        </div> 
+
+        </div>
    </div>
 </div>
 <!-- Sidebar ends -->
-   
-    
+
+
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
@@ -178,7 +181,7 @@
             </li>
         </ul>
     </div>
-    
+
     <!-- Breadcrumbs line -->
     <div class="breadLine">
         <div class="bc">
@@ -194,7 +197,7 @@
                 <li class="current"><a href="#" title="">Current page</a></li>
             </ul>
         </div>
-        
+
         <div class="breadLinks">
             <ul>
                 <li><a href="#" title=""><i class="icos-check"></i><span>Button</span></a></li>
@@ -213,27 +216,35 @@
             </ul>
         </div>
     </div>
-    
-    <!-- Main content -->
-    <div class="wrapper">
+
+    <!-- Main content this is where I'm going to try and use Angular-->
+    <!-- <div class="wrapper">
         <ul class="middleNavR">
             <li><a href="#" title="Add an article" class="tipN"><img src="images/icons/middlenav/create.png" alt="" /></a></li>
             <li><a href="#" title="Upload files" class="tipN"><img src="images/icons/middlenav/upload.png" alt="" /></a></li>
             <li><a href="#" title="Add something" class="tipN"><img src="images/icons/middlenav/add.png" alt="" /></a></li>
             <li><a href="#" title="Messages" class="tipN"><img src="images/icons/middlenav/dialogs.png" alt="" /></a><strong>8</strong></li>
             <li><a href="#" title="Check statistics" class="tipN"><img src="images/icons/middlenav/stats.png" alt="" /></a></li>
-        </ul>
-    
+        </ul> -->
+
+				<div class='angular-menu'>
+					<a ui-sref='welcome'><button>Main</button></a>
+					<a ui-sref='outstandingreports'><button>Outstanding Reports</button></a>
+					<a ui-sref='completedreports'><button>Completed Reports</button></a>
+					<a ui-sref='patientlist'><button>Patient List</button></a>
+			</div>
+				<ui-view></ui-view>
+
         <!-- Calendar -->
-        <div class="widget">
+        <!-- <div class="widget">
             <div class="whead"><h6>Widget</h6></div>
             <div class="body">Simple widget body</div>
         </div>
-    </div>
+    </div> -->
     <!-- Main content ends -->
-    
+
 </div>
-<!-- Content ends -->  
-             
+<!-- Content ends -->
+
 </body>
 </html>
